@@ -906,6 +906,7 @@ a:focus {
   color: #ffffff;
   padding: 75px 0 40px 0;
   text-align: center;
+  flex-shrink: 0; /* Это свойство предотвращает уменьшение футера при недостатке места */
 }
 
 .footer_section h4 {
@@ -1085,9 +1086,9 @@ body {
 }
 
 .food_section .custom_menu div {
-  padding: 7px 25px;
+  padding: 7px 7px;
   cursor: pointer;
-  border-radius: 25px;
+  border-radius: 40px;
   color: #ffffff; 
   background-color: #121013;
   margin-bottom: 20px; 

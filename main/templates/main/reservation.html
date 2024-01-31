@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="{% static "images/hero-bg.jpg" %}" alt="">
+    </div>
+  </body>
+{% endblock main %}
+
+
+{% block book %}
+<section class="book_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>
+        Забронировать стол
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form_container">
+          <form method="post" action="{% url 'main:index' %}">
+            {% csrf_token %}
+            {% if messages %}
+            <div class="alert alert-success">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div>
+              <input type="text" class="form-control" placeholder="Ваше имя" name="name" autocomplete="off"/>
+            </div>
+            <div>
+              <input type="text" class="form-control" placeholder="Номер телефона" name="phone" autocomplete="off"/>
+            </div>
+            <div>
+              <input type="email" class="form-control" placeholder="Email" name="email" autocomplete="off"/>
+            </div>
+            <div>
+              <select class="form-control nice-select wide" name="num_persons">
+                <option value="" disabled selected>
+                  Сколько гостей?
+                </option>
+                <option value="2">
+                  2
+                </option>
+                <option value="3">
+                  3
+                </option>
+                <option value="4">
+                  4
+                </option>
+                <option value="5">
+                  5
+                </option>
+              </select>
+            </div>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+            
+            <div>
+                <input type="text" class="form-control" name="date" id="dateInput" data-inputmask="'mask': '99.99.9999'" autocomplete="off" placeholder="Выберите дату"/>
+            </div>
+            <div>
+              <input type="text" class="form-control" name="time" id="timeInput" autocomplete="off" placeholder="Выберите время"/>
+          </div>
+      
+          <script>
+              flatpickr('#dateInput', {
+                  dateFormat: 'd.m.Y',
+              });
+      
+              flatpickr('#timeInput', {
+                  enableTime: true,
+                  noCalendar: true,
+                  dateFormat: 'H:i',
+                  time_24hr: true, 
+              });
+          </script>
+      
+          <div class="btn_box">
+              <button type="submit">Забронировать стол</button>
+          </div>
+          </form>      
+        </div>
+      </div>
+      <div class="col-md-6">
+        <section id="locationSection">
+        <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/tortuga_s/1748265287/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Tortuga'S</a><a href="https://yandex.ru/maps/213/moscow/category/bar_pub/184106384/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Бар, паб в Москве</a><a href="https://yandex.ru/maps/213/moscow/category/restaurant/184106394/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Ресторан в Москве</a><iframe src="https://yandex.ru/map-widget/v1/?ll=37.756045%2C55.726867&mode=poi&poi%5Bpoint%5D=37.757546%2C55.726629&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1748265287&z=18.46" width="555" height="509" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+      </section>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock book %}

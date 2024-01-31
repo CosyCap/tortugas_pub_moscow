@@ -9,44 +9,8 @@
     <img src="{% static "images/mainpage.png" %}" alt="">
   </div>
 {% endblock main %}
-{% block header %}
-<header class="header_section">
-  <div class="container">
-    <nav class="navbar navbar-expand-lg custom_nav-container ">
-      <a class="navbar-brand" href="index.html">
-        <span>
-          Tortuga's
-        </span>
-      </a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class=""> </span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav  mx-auto ">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url "main:index" %}">Главная страница<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url "menu:menu_list" %}">Меню</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">О нас</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="book.html">Забронировать стол</a>
-          </li>
-        </ul>
-        <div class="user_option">
-          <a class="cart_link" href="#">
-          </a>
-        </div>
-      </div>
-    </nav>
-  </div>
-</header>
-{% endblock header %}
 {% block slider %}
 <section class="slider_section ">
   <div id="customCarousel1" class="carousel slide" data-ride="carousel">
@@ -60,11 +24,11 @@
                   Пивной ресторан в Москве
                 </h1>
                 <p>
-                  Напиши что-нибудь потом сюда и подумай над шрифтами
+                  Большой выбор блюд и напитков
                 </p>
                 <div class="btn-box">
-                  <a href="" class="btn1">
-                    Order Now
+                  <a href="{% url 'menu:menu_list' %}" class="btn1">
+                    Наше меню
                   </a>
                 </div>
               </div>
@@ -78,14 +42,14 @@
             <div class="col-md-7 col-lg-6 ">
               <div class="detail-box">
                 <h1>
-                  Пивной ресторан в Москве второй тег
+                  Пивной ресторан в Москве
                 </h1>
                 <p>
-                  Напиши что-нибудь потом сюда и подумай над шрифтами
+                  От станции метро Стахановская 2 минуты пешком
                 </p>
                 <div class="btn-box">
-                  <a href="" class="btn1">
-                    Order Now
+                  <a href="#locationSection" class="btn1">
+                    Расположение
                   </a>
                 </div>
               </div>
@@ -276,7 +240,9 @@
         </div>
       </div>
       <div class="col-md-6">
+        <section id="locationSection">
         <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/tortuga_s/1748265287/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Tortuga'S</a><a href="https://yandex.ru/maps/213/moscow/category/bar_pub/184106384/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Бар, паб в Москве</a><a href="https://yandex.ru/maps/213/moscow/category/restaurant/184106394/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Ресторан в Москве</a><iframe src="https://yandex.ru/map-widget/v1/?ll=37.756045%2C55.726867&mode=poi&poi%5Bpoint%5D=37.757546%2C55.726629&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1748265287&z=18.46" width="555" height="509" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+      </section>
       </div>
     </div>
   </div>
@@ -303,8 +269,7 @@
   <!-- custom js -->
   <script src="{% static "js/custom.js" %}"></script>
   <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
+
   <!-- End Google Map -->
 
 </body>

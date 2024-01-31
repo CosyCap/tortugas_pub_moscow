@@ -36,7 +36,39 @@
   
 {% block content %}{% endblock content %}
 {% block main %}{% endblock main %}
-{% block header %}{% endblock header %}
+<header class="header_section">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <a class="navbar-brand" href="{% url "main:index" %}">
+        <span>
+          Tortuga's
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""> </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mx-auto ">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "main:index" %}">Главная страница </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "menu:menu_list" %}">Меню </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "main:about" %}">О нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "main:reservation" %}">Забронировать стол</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+  </div>
+</header>
     <!-- slider section -->
 {% block slider %}{% endblock slider %}
     <!-- end slider section -->

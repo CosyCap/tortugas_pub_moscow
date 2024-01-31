@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block main %}
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="{% static "images/hero-bg.jpg" %}" alt="">
+    </div>
+  </body>
+{% endblock main %}
+
+
+{% comment %} {% block header %}
+<header class="header_section">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <a class="navbar-brand" href="{% url "main:index" %}">
+        <span>
+          Tortuga's
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""> </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mx-auto ">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "main:index" %}">Главная страница </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url "menu:menu_list" %}">Меню <span class="sr-only">(current)</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="book.html">Забронировать стол</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+  </div>
+</header>
+{% endblock header %} {% endcomment %}
+
+{% block about %}
+<section class="about_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 order-md-1">
+        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static "images/about1.jpg" %}" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static "images/about2.jpg" %}" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static "images/about3.jpg" %}" class="d-block w-100" alt="Slide 2">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 order-md-2">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>
+            Tortuga's Diner & Pub
+            </h2>
+          </div>
+          <style>
+            .container {
+              text-align: center;
+            }
+          
+            .container p {
+              text-align: left; /* Левое выравнивание текста внутри параграфа */
+            }
+          
+            .container ul {
+              text-align: left; /* Левое выравнивание текста внутри списка */
+            }
+          </style>
+          
+          <div class="container">
+            <p>Открыты для тех, кто ценит хорошую атмосферу!</p>
+            <p>Tortuga'S - уютный бар, приглашающий гостей на приятное времяпрепровождение. Здесь вы можете насладиться настольными играми в компании друзей, попробовать изысканные импортные сорта напитков, наслаждаясь вкусной кухней, выпить чашечку кофе, насладиться киберспортивными трансляциями и отметить праздники в уютной обстановке.</p>
+            <p>Tortuga'S - это необычное заведение с особым подходом, в числе ключевых черт которого можно выделить:</p>
+            <ul>
+              <li>Местный Паб. У нас представлены отборные импортные и крафтовые разливные напитки. С лучшими ценами в Москве, наш паб пользуется популярностью как у местных жителей, так и у тех, кто готов преодолеть длинный путь.</li>
+              <li>Местный Дайнер. Наш бизнес-ланч считается лучшим в округе, предоставляя отличную возможность обедать с коллегами каждый день.</li>
+              <li>Ивент Плейс. Иногда Tortuga'S превращается в площадку для самых разнообразных мероприятий, в основном игрового формата - дни настольных игр, киберспортивные турниры, сборища, посвященные проектам Blizzard Entertainment и не только! При этом, у нас также проводятся живые выступления рок-музыкантов в акустическом формате :)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock about %}
+
+
+
+
+
+
+{% block footer %}
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-col">
+          <div class="footer_contact">
+            <h4>
+              Наши контакты
+            </h4>
+            <div class="contact_link_box">
+              <a href="https://yandex.ru/maps/org/tortuga_s/1748265287/?from=mapframe&ll=37.757547%2C55.726629&z=15">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Где мы находимся
+                </span>
+              </a>
+              <a>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  +7-999-926-44-51
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  почтаиваныча
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <div class="footer_detail">
+            <a href="" class="footer-logo">
+              Tortuga'S
+            </a>
+            <p>
+              Вкусная еда и разнообразное пиво в нашем заведении ждут вас! Приходите!
+            </p>
+            {% comment %} <div class="footer_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-pinterest" aria-hidden="true"></i>
+              </a>
+            </div> {% endcomment %}
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <h4>
+            Часы открытия
+          </h4>
+          <p>
+            Каждый день
+          </p>
+          <p>
+            с 12:00 до 00:00
+          </p>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a>TortugaS Pub</a><br><br>
+          &copy; <span id="displayYear"></span> Templates By
+          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+          <span id="displayYear"></span> Icons By
+          <a href="https://www.flaticon.com/ru/" target="_blank">Flaticon</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+{% endblock footer %}
+
+
+
+<!-- Подключение стилей Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Подключение скриптов Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
