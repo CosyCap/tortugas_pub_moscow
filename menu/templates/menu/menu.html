@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="{% static "images/hero-bg.jpg" %}" alt="">
+    </div>
+{% endblock main %}
+{% block header %}
+<header class="header_section">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <a class="navbar-brand" href="index.html">
+        <span>
+          Tortuga's
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""> </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mx-auto ">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url "main:index" %}">Главная страница<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "menu:menu_list" %}">Меню</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">О нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="book.html">Забронировать стол</a>
+          </li>
+        </ul>
+        <div class="user_option">
+          <a class="cart_link" href="#">
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+{% endblock header %}
+
+
+
+
+<!-- food section -->
+<!-- food section -->
+{% block section %}
+<section class="food_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Меню
+      </h2>
+    </div>
+
+    <div class="custom_menu">
+      <div class="{% if not category_filter %}active{% endif %}" data-filter="*">
+        <a style="color: #ffffff" href="{% url 'menu:menu_list' %}">Все блюда</a>
+      </div> 
+      {% for category in categories %}
+        <div class="{% if category_filter == category.slug %}active{% endif %}" data-filter=".{{ category.slug }}">
+          <a style="color: #ffffff" href="{% url 'menu:category_detail' category.slug %}">{{ category.name }}</a>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <div class="filters-content">
+      <div class="row grid">
+        {% for dish in dishes %}
+          <div class="col-sm-6 col-lg-4 all {{ dish.category.slug }}">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  {% if dish.image %}
+                  <img src="{{ dish.image.url }}" alt="{{ dish.name }}" width="270" height="145">                  
+                  {% else %}
+                    <p>No image available</p>
+                  {% endif %}
+                </div>
+                
+                <div class="detail-box">
+                  <h5>{{ dish.name }}</h5>
+                  <p>{{ dish.description }}</p>
+                  <div class="options">
+                    <h6>{{ dish.price }}</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock section%} 
+<!-- end food section -->
+
+
+ 
