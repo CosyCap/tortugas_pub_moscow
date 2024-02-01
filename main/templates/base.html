@@ -29,7 +29,7 @@
 
   <!-- Custom styles for this template -->
   <link href="{% static "css/style.css" %}" rel="stylesheet" />
-
+  
   <!-- responsive style -->
   <link href="{% static "css/responsive.css" %}" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"></head>
@@ -141,47 +141,60 @@
             <p>
               Вкусная еда и разнообразное пиво в нашем заведении ждут вас! Приходите!
             </p>
-            {% comment %} <div class="footer_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
-              </a>
-            </div> {% endcomment %}
+
           </div>
         </div>
         <div class="col-md-4 footer-col">
-          <h4>
-            Часы открытия
-          </h4>
+          <h4>Часы открытия</h4>
+          <p>Сегодня</p>
+          <p id="working-hours"></p>
+        
+          <script>
+            var currentDay = new Date().getDay();
+            var workingHours;
+        
+            switch (currentDay) {
+              case 0:
+                workingHours = "с 13:00 до 01:00";
+                break;
+              case 1:
+                workingHours = "с 08:00 до 23:00";
+                break;
+              case 2:
+                workingHours = "с 08:00 до 23:00";
+                break;
+              case 3:
+                workingHours = "с 08:00 до 23:00";
+                break;
+              case 4:
+                workingHours = "с 08:00 до 23:00";
+                break;
+              case 5:
+                workingHours = "с 13:00 до 01:00";
+                break;
+              case 6:
+                workingHours = "с 13:00 до 01:00";
+                break;
+              default:
+                workingHours = "Нет данных";
+            }
+        
+            // Вставьте график работы в элемент с id="working-hours"
+            document.getElementById("working-hours").innerHTML = workingHours;
+          </script>
+        </div>
+        
+        
+        <div class="footer-info">
           <p>
-            Каждый день
-          </p>
-          <p>
-            с 12:00 до 00:00
+            &copy; <span id="displayYear1"></span> All Rights Reserved By
+            <a>TortugaS Pub</a><br><br>
+            &copy; <span id="displayYear2"></span> Templates By
+            <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+            <span id="displayYear3"></span> Icons By
+            <a href="https://www.flaticon.com/ru/" target="_blank">Flaticon</a>
           </p>
         </div>
-      </div>
-      <div class="footer-info">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a>TortugaS Pub</a><br><br>
-          &copy; <span id="displayYear"></span> Templates By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-          <span id="displayYear"></span> Icons By
-          <a href="https://www.flaticon.com/ru/" target="_blank">Flaticon</a>
-        </p>
-      </div>
     </div>
   </footer>
   <!-- footer section -->
@@ -207,7 +220,6 @@
   </script>
   <!-- End Google Map -->
   <script src="{% static 'js/scrollToForm.js' %}"></script>
-
 </body>
 </html>
 </body>

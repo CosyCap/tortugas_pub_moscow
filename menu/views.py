@@ -19,3 +19,4 @@ def category_detail(request, category_slug):
 
     context = {'category': category, 'dishes': dishes}
     return render(request, 'menu/category_detail.html', context)
+
