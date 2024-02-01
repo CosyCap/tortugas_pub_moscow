@@ -85,7 +85,7 @@
 {% block section %}{% endblock section %}
 
   <!-- end food section -->
-
+{% block opinions %}{% endblock opinions %}
   <!-- about section -->
 
 {% block about %}{% endblock about %}
@@ -103,6 +103,7 @@
   <!-- end client section -->
 
   <!-- footer section -->
+  {% block footer %}
   <footer class="footer_section">
     <div class="container">
       <div class="row">
@@ -139,9 +140,15 @@
               Tortuga'S
             </a>
             <p>
-              Вкусная еда и разнообразное пиво в нашем заведении ждут вас! Приходите!
+              Вкусная еда и разнообразное пиво в нашем заведении ждут вас! Приходите!<br>
+              &copy; <span id="displayYear1"></span> All Rights Reserved By
+            <a>TortugaS Pub</a><br>
+            &copy; <span id="displayYear2"></span> Templates By
+            <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+            <span id="displayYear3"></span> Icons By
+            <a href="https://www.flaticon.com/ru/" target="_blank">Flaticon</a>
             </p>
-
+  
           </div>
         </div>
         <div class="col-md-4 footer-col">
@@ -183,20 +190,10 @@
             document.getElementById("working-hours").innerHTML = workingHours;
           </script>
         </div>
-        
-        
-        <div class="footer-info">
-          <p>
-            &copy; <span id="displayYear1"></span> All Rights Reserved By
-            <a>TortugaS Pub</a><br><br>
-            &copy; <span id="displayYear2"></span> Templates By
-            <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-            <span id="displayYear3"></span> Icons By
-            <a href="https://www.flaticon.com/ru/" target="_blank">Flaticon</a>
-          </p>
-        </div>
+  
     </div>
   </footer>
+  {% endblock footer %}
   <!-- footer section -->
 
   <!-- jQery -->
@@ -215,10 +212,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
   <!-- custom js -->
   <script src="{% static "js/custom.js" %}"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
   <script src="{% static 'js/scrollToForm.js' %}"></script>
 </body>
 </html>

@@ -162,7 +162,27 @@
 </div>
 {% endblock section %}
 
+{% block opinions %}
+<div class="heading_center">
+  <h2>Ваши отзывы</h2>
+</div>
+<div class="reviews-container">
+  <div class="review">
+    <h3>Александр</h3>
+    <p>Удивительное заведение, выдающийся владелец, отличное пиво, превосходная рулька, великолепные крылья с острым соусом, атмосфера настоящего пиратского паба. Рекомендую!</p>
+  </div>
 
+  <div class="review">
+    <h3>Иван</h3>
+    <p>Посещаю данное заведение с самого открытия. Не раз праздновал там различные мероприятия. Это место уже как родное, вкусная еда, пиво, демократичные цены, музыка в моем вкусе и приятные хозяева. Еще не раз приду сюда и приведу друзей. </p>
+  </div>
+
+  <div class="review">
+    <h3>Татьяна</h3>
+    <p>Потрясающе вкусно! Очень хорошее пиво. Борщ божественный! Картошка с мясом удивительно вкусная! Гренки, обычные гренки просто волшебные. Не первый раз здесь, и я просто уверена, не в последний. </p>
+  </div>
+</div>
+{% endblock opinions %}
 
 {% block book %}
 <section class="book_section layout_padding">
@@ -250,26 +270,6 @@
 
 
 
-
-  <!-- jQery -->
-  <script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <!-- bootstrap js -->
-  <script src="{% static "js/bootstrap.js" %}"></script>
-  <!-- owl slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <!-- isotope js -->
-  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
-  <!-- nice select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
-  <!-- custom js -->
-  <script src="{% static "js/custom.js" %}"></script>
-  <!-- Google Map -->
-
-  <!-- End Google Map -->
 
 </body>
 
