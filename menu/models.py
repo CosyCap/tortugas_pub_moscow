@@ -17,7 +17,7 @@ class Category(models.Model):
 class Dish(models.Model):
     category = models.ForeignKey(Category, related_name='dishes', on_delete=models.CASCADE, verbose_name = 'Категория')
     name = models.CharField(max_length=255, verbose_name = 'Название')
-    description = models.TextField(max_length=255, verbose_name = 'Описание')
+    description = models.TextField(max_length=130, verbose_name = 'Описание')
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена')
     image = models.ImageField(upload_to='dish_images/', blank=True, null=True, verbose_name = 'Изображение')
     

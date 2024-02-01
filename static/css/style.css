@@ -1145,7 +1145,7 @@ body {
 }
 
 .review {
-  max-width: 1222px;
+  max-width: 50%;
   padding: 15px;
   border-radius: 8px;
   background-color: #fff;
