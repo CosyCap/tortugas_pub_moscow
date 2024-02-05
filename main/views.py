@@ -1,13 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import ReservationForm
 from django.contrib import messages
-from datetime import datetime
-from django.http import JsonResponse
+from datetime import datetime, time
 import locale
-
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from .forms import ReservationForm
 
 def handle_reservation(request, template_name, redirect_name):
     if request.method == 'POST':
@@ -15,7 +10,6 @@ def handle_reservation(request, template_name, redirect_name):
         if form.is_valid():
             form.save()
             messages.success(request, "Бронирование успешно завершено! Скоро Вам перезвоним чтобы уточнить детали")
-            print("Data saved successfully")
             return redirect(redirect_name)
         else:
             print("Form errors:", form.errors.as_text())

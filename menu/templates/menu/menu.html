@@ -18,11 +18,9 @@
           Tortuga's
         </span>
       </a>
-
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class=""> </span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav  mx-auto ">
           <li class="nav-item active">
@@ -47,11 +45,6 @@
   </div>
 </header>
 {% endblock header %}
-
-
-
-
-<!-- food section -->
 <!-- food section -->
 {% block section %}
 <section class="food_section layout_padding">
@@ -61,7 +54,6 @@
         Меню
       </h2>
     </div>
-
     <div class="custom_menu">
       <div class="{% if not category_filter %}active{% endif %}" data-filter="*">
         <a style="color: #ffffff" href="{% url 'menu:menu_list' %}">Все блюда</a>
@@ -71,8 +63,7 @@
           <a style="color: #ffffff" href="{% url 'menu:category_detail' category.slug %}">{{ category.name }}</a>
         </div>
       {% endfor %}
-    </div>
-    
+    </div> 
     <div class="filters-content">
       <div class="row grid">
         {% for dish in dishes %}
@@ -85,8 +76,7 @@
                   {% else %}
                     <p>No image available</p>
                   {% endif %}
-                </div>
-                
+                </div>      
                 <div class="detail-box">
                   <h5>{{ dish.name }}</h5>
                   <p>{{ dish.description }}</p>
